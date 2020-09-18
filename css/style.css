@@ -1,0 +1,157 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: hsl(204, 43%, 93%);
+    font-family: "Karla", sans-serif;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vh;
+    height: 97vh;
+}
+
+.pricing-grid {
+    display: grid;
+    width: 80%;
+    max-width: 650px;
+    justify-content: center;
+    grid-template-areas:
+    'header header'
+    'details features';
+    grid-template-rows: 0.5fr 1fr;
+    grid-template-columns: 0.48fr 0.52fr;
+    box-shadow: 0 0 7px -3px #666;
+}
+
+.grid-header {
+    grid-area: header;
+    background: white;
+    border-radius: 5px 5px 0 0;
+    padding: 2em 6em 2em 2em;
+}
+
+.grid-header > div {
+    margin: 0.5em 0;
+}
+
+.title {
+    color: hsl(179, 62%, 43%);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.subtitle {
+    color: hsl(71, 73%, 54%);
+    font-weight: 700;
+}
+
+.description {
+    color: hsl(218, 22%, 67%);
+    line-height: 1.5rem;
+}
+
+.grid-details {
+    grid-area: details;
+    background: hsl(179, 62%, 43%);
+    padding: 2.5em 2em;
+    display: grid;
+    grid-template-rows: 0.2fr 0.2fr 0.2fr 0.2fr;
+    gap: 0.5em;
+    border-radius: 0 0 0 5px;
+}
+
+.monthlysub {
+    color: hsl(204, 43%, 93%);
+}
+
+.price {
+    display: flex;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.3);
+}
+
+.price-description {
+    color: hsl(204, 43%, 93%);
+    font-size: 0.9rem;
+}
+
+.price > span {
+    color: #ffffff;
+    font-size: 2rem;
+    margin-right: 0.5em;
+}
+
+.button {
+    background: hsl(71, 73%, 54%);
+    text-decoration: none;
+    text-align: center;
+    padding: 0.8em;
+    color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 0 0 5px #999;
+    margin-top: 1.2em;
+}
+
+.grid-features {
+    grid-area: features;
+    background: #4abebd;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5em;
+    border-radius: 0 0 5px 0;
+}
+
+.why-us {
+    color: #fff;
+    margin-bottom: 1em;
+}
+
+.grid-features > div:not(:first-child) {
+    color: #ddd;
+    font-size: 0.9em;
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a{
+    color: hsl(228, 45%, 44%);
+}
+
+@media screen and (max-width: 600px) {
+    .wrapper {
+        height: initial;
+    }
+
+    .pricing-grid {
+        grid-template-areas: 
+        'header'
+        'details'
+        'features';
+        grid-template-columns: none;
+        grid-template-rows: none;
+        margin: 5em 1em;
+    }
+
+    .grid-header{
+        padding: 2em;
+    }
+
+    .grid-details {
+        border-radius: 0;
+    }
+
+    .grid-features {
+        border-radius: 0 0 5px 5px;
+    }
+}
+
